@@ -27,18 +27,18 @@ public:
 
 
 
-	// BlueprintPure ¿Í BlueprintCallable ÀÇ Â÷ÀÌÁ¡
-	// µÑ´Ù ÄÚµå·Î ÀÛ¼ºµÇ¾ú°í ºí·çÇÁ¸°Æ®¿¡¼­ È£ÃâÀÌ °¡´ÉÇÔ
-	// BlueprintPure ÇüÀº ±âº»ÀûÀ¸·Î °ªÀÇ º¯°æÀÌ °¡´ÉÇÏÁö¸¸ ÀÏ¹ÝÀûÀ¸·Î´Â ±×·¸°Ô ÇÏ¸é ¾ÈµÊ
-	// ¹ÝÈ¯°ªÀ» ´Þ¶ó°í ÇßÀ»¶§ ¸¶´Ù ½ÇÇàÀÌµÊ
-	// ¹Ýº¹¹®ÀÌ³ª ¼­·Î´Ù¸¥ µÎ°³ÀÇ ³ëµåµî¿¡¼­ µÎ¹ø È£Ãâ µÇ¾úÀ»°æ¿ì
+	// BlueprintPure ì™€ BlueprintCallable ì˜ ì°¨ì´ì 
+	// ë‘˜ë‹¤ ì½”ë“œë¡œ ìž‘ì„±ë˜ì—ˆê³  ë¸”ë£¨í”„ë¦°íŠ¸ì—ì„œ í˜¸ì¶œì´ ê°€ëŠ¥í•¨
+	// BlueprintPure í˜•ì€ ê¸°ë³¸ì ìœ¼ë¡œ ê°’ì˜ ë³€ê²½ì´ ê°€ëŠ¥í•˜ì§€ë§Œ ì¼ë°˜ì ìœ¼ë¡œëŠ” ê·¸ë ‡ê²Œ í•˜ë©´ ì•ˆë¨
+	// ë°˜í™˜ê°’ì„ ë‹¬ë¼ê³  í–ˆì„ë•Œ ë§ˆë‹¤ ì‹¤í–‰ì´ë¨
+	// ë°˜ë³µë¬¸ì´ë‚˜ ì„œë¡œë‹¤ë¥¸ ë‘ê°œì˜ ë…¸ë“œë“±ì—ì„œ ë‘ë²ˆ í˜¸ì¶œ ë˜ì—ˆì„ê²½ìš°
 
-	// BlueprintCallable ÇüÀº ½ÇÇà¼ø¼­ ÇÉ¿¡¼­ ½ÇÇà ½ÅÈ£°¡ ÀÔ·ÂµÇ¾úÀ»¶§¿¡¸¸ ½ÇÇàÀÌ µÊ.
-	// ±×¸®°í °á°ú°ªÀ» ¾Æ¿ôÇ² ÇÉ¿¡ ÀúÀåÇØµÒ.
-	// °ªÀ» º¯°æÇÏÁö ¾Ê´Â ÇÔ¼ö·Îµµ »ç¿ëµÉ ¼ö ÀÖÀ½
+	// BlueprintCallable í˜•ì€ ì‹¤í–‰ìˆœì„œ í•€ì—ì„œ ì‹¤í–‰ ì‹ í˜¸ê°€ ìž…ë ¥ë˜ì—ˆì„ë•Œì—ë§Œ ì‹¤í–‰ì´ ë¨.
+	// ê·¸ë¦¬ê³  ê²°ê³¼ê°’ì„ ì•„ì›ƒí’‹ í•€ì— ì €ìž¥í•´ë‘ .
+	// ê°’ì„ ë³€ê²½í•˜ì§€ ì•ŠëŠ” í•¨ìˆ˜ë¡œë„ ì‚¬ìš©ë  ìˆ˜ ìžˆìŒ
 
-	// ±×·¡¼­ ÀÚÁÖ º¯°æÇÏÁö ¾ÊÀ» °ÍÀ¸·Î ¿¹»óµÇ´Â ÄÚ½ºÆ®°¡ ¸¹ÀÌ µé¾î°¡´Â °á°ú°ª¿¡ BlueprintPure ÇÔ¼ö º¸´Ù´Â BlueprintCallable ÇÔ¼ö°¡ ´õ ÀûÇÕÇÔ
-	// °è»êÀÌ ºü¸£°í ÀÚÁÖ º¯°æµÇ´Â °ª¿¡´Â BlueprintPure ÇÔ¼ö°¡ ´õ ÀûÇÕÇÔ
+	// ê·¸ëž˜ì„œ ìžì£¼ ë³€ê²½í•˜ì§€ ì•Šì„ ê²ƒìœ¼ë¡œ ì˜ˆìƒë˜ëŠ” ì½”ìŠ¤íŠ¸ê°€ ë§Žì´ ë“¤ì–´ê°€ëŠ” ê²°ê³¼ê°’ì— BlueprintPure í•¨ìˆ˜ ë³´ë‹¤ëŠ” BlueprintCallable í•¨ìˆ˜ê°€ ë” ì í•©í•¨
+	// ê³„ì‚°ì´ ë¹ ë¥´ê³  ìžì£¼ ë³€ê²½ë˜ëŠ” ê°’ì—ëŠ” BlueprintPure í•¨ìˆ˜ê°€ ë” ì í•©í•¨
 
 
 	UFUNCTION(BlueprintPure, Category = "Pickup")
@@ -48,9 +48,9 @@ public:
 	void SetActive(bool newState);
 
 
-	// ºí·çÇÁ¸°Æ® ³×ÀÌÆ¼ºê ÀÌº¥Æ®ÀÏ¶§
-	// ÄÚµå ÀÓÇÃ¸®¸ÕÅ×ÀÌ¼Ç, °¡»óÇÔ¼ö¿©¾ß ÇÏ°í, ÀÚ¼Õ Å¬·¡½º¿¡¼­ ¿À¹ö¶óÀÌµùÀÌ °¡´É
-	// ºí·çÇÁ¸°Æ®¿¡¼­ µ¿ÀÛ ±¸Çö + Ãß°¡ ÄÚµåµ¿ÀÛ
+	// ë¸”ë£¨í”„ë¦°íŠ¸ ë„¤ì´í‹°ë¸Œ ì´ë²¤íŠ¸ì¼ë•Œ
+	// ì½”ë“œ ìž„í”Œë¦¬ë¨¼í…Œì´ì…˜, ê°€ìƒí•¨ìˆ˜ì—¬ì•¼ í•˜ê³ , ìžì† í´ëž˜ìŠ¤ì—ì„œ ì˜¤ë²„ë¼ì´ë”©ì´ ê°€ëŠ¥
+	// ë¸”ë£¨í”„ë¦°íŠ¸ì—ì„œ ë™ìž‘ êµ¬í˜„ + ì¶”ê°€ ì½”ë“œë™ìž‘
 	UFUNCTION(BlueprintNativeEvent)
 	void wasCollected();
 	virtual void wasCollected_Implementation();	

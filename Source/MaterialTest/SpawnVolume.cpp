@@ -29,7 +29,7 @@ void ASpawnVolume::BeginPlay()
 	Super::BeginPlay();
 
 
-	// GameMode ¿¡¼­ ÄÁÆ®·ÑÇÏ±âÀ§Çì ÁÖ¼®
+	// GameMode ì—ì„œ ì»¨íŠ¸ë¡¤í•˜ê¸°ìœ„í—¤ ì£¼ì„
 	// _cur_delay = FMath::RandRange(_spawn_delay_min, _spawn_delay_max);
 	// GetWorldTimerManager().SetTimer(_timer_handle, this, &ASpawnVolume::SpawnPickup, _cur_delay, false);
 }
@@ -64,29 +64,29 @@ void ASpawnVolume::SetSpawningActive(bool bShouldSpawn)
 
 void ASpawnVolume::SpawnPickup()
 {
-	// »ý¼ºÇÒ °Í ÀÌ ÀÖ´Ù¸é
+	// ìƒì„±í•  ê²ƒ ì´ ìžˆë‹¤ë©´
 	if (whatToSpawn != NULL)
 	{
-		// ¿ùµå°¡ À¯È¿ÇÑÁö È®ÀÎ
+		// ì›”ë“œê°€ ìœ íš¨í•œì§€ í™•ì¸
 		UWorld* const World = GetWorld();
 		if (World)
 		{
-			// ½ºÆù ÆÄ¶ó¸ÞÅÍ¸¦ ¼¼ÆÃ
+			// ìŠ¤í° íŒŒë¼ë©”í„°ë¥¼ ì„¸íŒ…
 			FActorSpawnParameters SpawnParams;
 
 			SpawnParams.Owner = this;
 			SpawnParams.Instigator = GetInstigator();
 
-			// »ý¼ºÀ§Ä¡¿¡ ·£°ËÇÑ À§Ä¡¸¦ ¼±ÅÃ
+			// ìƒì„±ìœ„ì¹˜ì— ëžœê²€í•œ ìœ„ì¹˜ë¥¼ ì„ íƒ
 			FVector SpawnLocation = GetRandomPointInVolume();
 
-			// »ý¼ºÇÑ ¾ÆÀÌÅÛ¿¡ Àû´çÇÑ È¸Àü°ªÀ» ÁÜ
+			// ìƒì„±í•œ ì•„ì´í…œì— ì ë‹¹í•œ íšŒì „ê°’ì„ ì¤Œ
 			FRotator SpawnRotation;
 			SpawnRotation.Yaw = FMath::FRand() * 360.0f;
 			SpawnRotation.Pitch = FMath::FRand() * 360.0f;
 			SpawnRotation.Roll = FMath::FRand() * 360.0f;
 
-			// Pickup À» ½ºÆù
+			// Pickup ì„ ìŠ¤í°
 			APickup* const SpawnedPickup = World->SpawnActor<APickup>(whatToSpawn, SpawnLocation, SpawnRotation, SpawnParams);
 
 			_cur_delay = FMath::RandRange(_spawn_delay_min, _spawn_delay_max);

@@ -20,7 +20,7 @@ AMaterialTestGameMode::AMaterialTestGameMode()
 
 	PrimaryActorTick.bCanEverTick = true;
 
-	// DecayRate ±âº»°ª ¼³Á¤
+	// DecayRate ê¸°ë³¸ê°’ ì„¤ì •
 	DecayRate = 0.01f;
 }
 
@@ -28,7 +28,7 @@ void AMaterialTestGameMode::BeginPlay()
 {
 	Super::BeginPlay();
 
-	// ¸ğµç ½ºÆùº¼·ı¾×ÅÍ¸¦ Ã£¾Æ³¿
+	// ëª¨ë“  ìŠ¤í°ë³¼ë¥¨ì•¡í„°ë¥¼ ì°¾ì•„ëƒ„
 	TArray<AActor*> FoundActors;
 	UGameplayStatics::GetAllActorsOfClass(GetWorld(), ASpawnVolume::StaticClass(), FoundActors);
 

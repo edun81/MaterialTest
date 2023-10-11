@@ -62,7 +62,7 @@ AMaterialTestCharacter::AMaterialTestCharacter()
 	InitialPower = 2000.f;
 	CharacterPower = InitialPower;
 
-	// ÆÄ¿ö ·¹º§¿¡ µû¶ó ¼Óµµ¸¦ ¼³Á¤ÇÔ
+	// íŒŒì›Œ ë ˆë²¨ì— ë”°ë¼ ì†ë„ë¥¼ ì„¤ì •í•¨
 	SpeedFactor = 0.75f;
 	BaseSpeed = 10.0f;
 }
@@ -151,22 +151,22 @@ void AMaterialTestCharacter::CollectPickups()
 	UE_LOG(LogClass, Log, TEXT("---------- CollectPickups"));
 
 
-	// Sphere¿Í ¿À¹ö·¦ µÇ´Â ¸ğµç ¾×ÅÍ¸¦ ¹è¿­·Î ¹Ş¾Æ¿Í¼­
+	// Sphereì™€ ì˜¤ë²„ë© ë˜ëŠ” ëª¨ë“  ì•¡í„°ë¥¼ ë°°ì—´ë¡œ ë°›ì•„ì™€ì„œ
 	TArray<AActor*> arr_actors;
 	CollectionSphere->GetOverlappingActors(arr_actors);
 
 	// 
 	float CollectedPower = 0.0f;
 
-	// foreach¸¦ ÀÌ¿ëÇØ¼­ Actor¸¦ APickup À¸·Î Çüº¯È¯
+	// foreachë¥¼ ì´ìš©í•´ì„œ Actorë¥¼ APickup ìœ¼ë¡œ í˜•ë³€í™˜
 	for (int32 i = 0; i < arr_actors.Num(); ++i)
 	{
 		APickup* const pickup = Cast<APickup>(arr_actors[i]);
 
-		// Çüº¯È¯ ¼º°ø, ¾ÆÀÌÅÛ À¯È¿ÇÏ°í, È°¼ºÈ­ µÇ¾îÀÖÀ¸¸é
+		// í˜•ë³€í™˜ ì„±ê³µ, ì•„ì´í…œ ìœ íš¨í•˜ê³ , í™œì„±í™” ë˜ì–´ìˆìœ¼ë©´
 		if (pickup && !pickup->IsPendingKill() && pickup->IsActive())
 		{
-			// WasCollected ÇÔ¼ö È£Ãâ ¹× ºñÈ°¼ºÈ­ »óÅÂ·Î ¼¼ÆÃ
+			// WasCollected í•¨ìˆ˜ í˜¸ì¶œ ë° ë¹„í™œì„±í™” ìƒíƒœë¡œ ì„¸íŒ…
 			pickup->wasCollected();
 
 			APickupBattery* battery = Cast<APickupBattery>(pickup);
@@ -195,15 +195,15 @@ float AMaterialTestCharacter::GetCurrentPower()
 	return CharacterPower;
 }
 
-// ÆÄ¿ö°¡ ´Ã°Å³ª ÁÙ¸é È£ÃâµÊ.
+// íŒŒì›Œê°€ ëŠ˜ê±°ë‚˜ ì¤„ë©´ í˜¸ì¶œë¨.
 void AMaterialTestCharacter::UpdatePower(float PowerChange)
 {
 	CharacterPower = CharacterPower + PowerChange;
 
-	// ÆÄ¿ö¿¡ µû¶ó ¼Óµµ¸¦ º¯°æÇÔ.
+	// íŒŒì›Œì— ë”°ë¼ ì†ë„ë¥¼ ë³€ê²½í•¨.
 	GetCharacterMovement()->MaxWalkSpeed = BaseSpeed * SpeedFactor * CharacterPower;
 
-	// ½Ã°¢È¿°ú È£Ãâ
+	// ì‹œê°íš¨ê³¼ í˜¸ì¶œ
 	EventPowerChangeEffect();
 
 }

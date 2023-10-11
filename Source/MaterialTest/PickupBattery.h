@@ -17,7 +17,7 @@ class MATERIALTEST_API APickupBattery : public APickup
 public:
 	APickupBattery();
 
-	// ÄÃ·º¼Ç ÇÔ¼ö ¿À¹ö¶óÀÌµù
+	// ì»¬ë ‰ì…˜ í•¨ìˆ˜ ì˜¤ë²„ë¼ì´ë”©
 	void wasCollected_Implementation() override;
 
 

@@ -33,7 +33,7 @@ public:
 	void SetSpawningActive(bool bShouldSpawn);
 
 protected:
-	// TSubclassOf¸¦ »ç¿ëÇÑ´Ù´Â°ÍÀº APickup »ó¼Ó¹Ş´Â Å¬·¡½º¸¦ ÇÑÁ¤À¸·Î ÇÑ´Ù´Â ÀÇ¹Ì
+	// TSubclassOfë¥¼ ì‚¬ìš©í•œë‹¤ëŠ”ê²ƒì€ APickup ìƒì†ë°›ëŠ” í´ë˜ìŠ¤ë¥¼ í•œì •ìœ¼ë¡œ í•œë‹¤ëŠ” ì˜ë¯¸
 	UPROPERTY(EditAnywhere, Category = "Spawning")
 	TSubclassOf<class APickup> whatToSpawn;
 
@@ -47,7 +47,7 @@ protected:
 	float _cur_delay;
 
 private:
-	// ¾ÆÀÌÅÛ ½ºÆùÀ§Ä¡¸¦ ÁöÁ¤ÇÒ ¹Ú½º ÄÄÆ÷³ÍÆ®
+	// ì•„ì´í…œ ìŠ¤í°ìœ„ì¹˜ë¥¼ ì§€ì •í•  ë°•ìŠ¤ ì»´í¬ë„ŒíŠ¸
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Spawning", meta = (AllowPrivateAccess = "true"))
 	class UBoxComponent*	whereToSpawn;
 

@@ -7,7 +7,7 @@
 #include "MaterialTestGameMode.generated.h"
 
 
-// ÇöÀç °ÔÀÓÇÃ·¹ÀÌ »óÅÂ¸¦ ÀúÀåÇÏ´Â enum
+// í˜„ì¬ ê²Œì„í”Œë ˆì´ ìƒíƒœë¥¼ ì €ì¥í•˜ëŠ” enum
 UENUM(BlueprintType)
 enum class EBatteryPlayState : uint8
 {
@@ -33,27 +33,27 @@ public:
 
 	virtual void BeginPlay() override;
 
-	// ÇöÀç »óÅÂ 
+	// í˜„ì¬ ìƒíƒœ 
 	UFUNCTION(BlueprintPure, Category = "Power")
 	EBatteryPlayState GetCurrentState();
 
-	// »õ ÇÃ·¹ÀÌ»óÅÂ·Î ¼³Á¤
+	// ìƒˆ í”Œë ˆì´ìƒíƒœë¡œ ì„¤ì •
 	void SetCurrentState(EBatteryPlayState NewState);
 
 protected:
 
-	// Ä³¸¯ÅÍ ÆÄ¿ö°¡ ÁÙ¾îµå´Â Á¤µµ
+	// ìºë¦­í„° íŒŒì›Œê°€ ì¤„ì–´ë“œëŠ” ì •ë„
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Power", Meta = (BlueprintProtected = "true"))
 	float DecayRate;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Power", Meta = (BlueprintProtected = "true"))
 	float PowerToWin;
 
-	// HUD È­¸é¿¡ »ç¿ëÇÒ À§Á¬ Å¬·¡½º
+	// HUD í™”ë©´ì— ì‚¬ìš©í•  ìœ„ì ¯ í´ë˜ìŠ¤
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Power", Meta = (BlueprintProtected = "true"))
 	TSubclassOf<class UUserWidget> HUDWidgetClass;
 
-	// HUDÀÇ ÀÎ½ºÅÏ½º
+	// HUDì˜ ì¸ìŠ¤í„´ìŠ¤
 	UPROPERTY()
 	class UUserWidget*		CurrentWidget;
 
@@ -62,7 +62,7 @@ private:
 
 	TArray<class ASpawnVolume*> SpawnVolumeActors;
 
-	// °ÔÀÓ ÇÃ·¹ÀÌ »óÅÂ¿¡ ¿µÇâÀ» ÁÖ´Â ¸ğµç ÇÔ¼öÀÇ È£ÃâÀ» ´ã´ç
+	// ê²Œì„ í”Œë ˆì´ ìƒíƒœì— ì˜í–¥ì„ ì£¼ëŠ” ëª¨ë“  í•¨ìˆ˜ì˜ í˜¸ì¶œì„ ë‹´ë‹¹
 	void HandleNewState(EBatteryPlayState NewState);
 };
 

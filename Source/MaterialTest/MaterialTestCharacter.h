@@ -54,7 +54,7 @@ public:
 	UFUNCTION(BlueprintPure, Category = "Power")
 	float GetCurrentPower();
 
-	// ÇöÀç ÆÄ¿ö¿¡ ´õÇÒ °ª
+	// í˜„ì¬ íŒŒì›Œì— ë”í•  ê°’
 	UFUNCTION(BlueprintCallable, Category = "Power")
 	void UpdatePower(float PowerChange);
 	
@@ -81,15 +81,15 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Power", Meta = (BlueprintProtected = "true"))
 	float InitialPower;
 
-	// Ä³¸¯ÅÍÀÇ ¼Óµµ¿¡ °öÇØÁö´Â °ª
+	// ìºë¦­í„°ì˜ ì†ë„ì— ê³±í•´ì§€ëŠ” ê°’
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Power", Meta = (BlueprintProtected = "true"))
 	float SpeedFactor;
 
-	// ÆÄ¿ö·¹º§ÀÌ 0ÀÏ¶§ÀÇ ¼Óµµ
+	// íŒŒì›Œë ˆë²¨ì´ 0ì¼ë•Œì˜ ì†ë„
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Power", Meta = (BlueprintProtected = "true"))
 	float BaseSpeed;
 
-	// ÄÚµå¿¡¼­´Â È£Ãâ¸¸, ½ÇÁ¦ µ¿ÀÛ ±¸ÇöÀº ºí·çÇÁ¸°Æ®¿¡¼­.
+	// ì½”ë“œì—ì„œëŠ” í˜¸ì¶œë§Œ, ì‹¤ì œ ë™ì‘ êµ¬í˜„ì€ ë¸”ë£¨í”„ë¦°íŠ¸ì—ì„œ.
 	UFUNCTION(BlueprintImplementableEvent, Category = "Power")
 	void EventPowerChangeEffect();	
 
